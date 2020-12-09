@@ -97,6 +97,20 @@ function getConfig() {
       //   TODO(vjpr): Although this is bad because it prevents using multiple versions across projects.
       assetPlugins: [expoAssetPluginPath],
 
+      // Transformer Paths
+      ////////////////////
+
+      // From: https://github.com/facebook/metro/blob/master/packages/metro-config/src/defaults/index.js
+
+      workerPath: getWorkerPath(),
+      //asyncRequireModulePath: 'metro-runtime/src/modules/asyncRequire',
+      //assetRegistryPath: 'missing-asset-registry-path',
+      //babelTransformerPath: 'metro-babel-transformer',
+      //transformerPath: require.resolve('metro-transform-worker'),
+      //minifierPath: 'metro-minify-uglify',
+
+      ////////////////////
+
       //enableBabelRCLookup,
 
       //enableBabelRuntime
@@ -106,7 +120,6 @@ function getConfig() {
     ////////////////////////////////////////////////////////////////////////////
 
     resolver: {
-      workerPath: getWorkerPath(),
 
       blacklistRE: blacklist([
         /.*\/default\/.*/,
