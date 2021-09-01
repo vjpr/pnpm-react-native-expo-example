@@ -2,6 +2,16 @@
 
 See: https://github.com/pnpm/pnpm/issues/3010
 
+# Usage
+
+Ensure `watchman` is installed.
+
+```
+pnpm i
+cd packages/expo
+npm run ios
+```
+
 # How it works?
 
 - We replace Metro's resolver with `webpack/enhanced-resolve` using the `resolveRequest` config option.
@@ -11,10 +21,6 @@ See: https://github.com/pnpm/pnpm/issues/3010
 
 - `enhanced-resolve` is super slow, so we use the `unsafeCache` option and write this to disk.
 - Loading the initial Metro dep graph takes a long time in large monorepos but this usually only has to be done once. I think it involves reading all files in your monorepo. I think this data is cached to `node_modules/.cache/metro-custom`. It would be nice to share this cache if possible across multiple mobile apps.
-
-# Tips
-
-Make sure you have `watchman` installed.
 
 # Upgrading existing project
 
