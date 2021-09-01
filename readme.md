@@ -2,6 +2,20 @@
 
 See: https://github.com/pnpm/pnpm/issues/3010
 
+# How it works?
+
+- We replace Metro's resolver with `webpack/enhanced-resolve` using the `resolveRequest` config option.
+- We patch `metro` to fix a `jest-haste-map` issue.
+
+# Performance
+
+- `enhanced-resolve` is super slow, so we use the `unsafeCache` option and write this to disk.
+- Loading the initial Metro dep graph takes a long time in large monorepos but this usually only has to be done once. I think it involves reading all files in your monorepo. I think this data is cached to `node_modules/.cache/metro-custom`. It would be nice to share this cache if possible across multiple mobile apps.
+
+# Tips
+
+Make sure you have `watchman` installed.
+
 # Upgrading existing project
 
 1. Don't forget to apply `package.json#pnpm.overrides` to the root of your project. (This could also be done in the `pnpmfile.js`.)
@@ -57,3 +71,11 @@ pnpm i
 ### See Github issues
 
 https://github.com/pnpm/pnpm/issues/3731
+
+# Todo
+
+- Maybe we don't need to patch `metro`, and we just patch `jest-haste-map` because `pnpm.overrides` is smarter now.
+
+For latest RN I think the issue is fixed anyway.
+
+- Share the metro dep graph cache across projects.
