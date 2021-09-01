@@ -12,20 +12,48 @@ Be careful of [this issue](https://github.com/pnpm/pnpm/issues/3735) when using 
 
 # Troubleshooting
 
-Show debug messages about resolving
+### Show debug messages about resolving
 
 ```
 EXPO_RESOLVE_PROGRESS=1 npm run ios
 ```
 
-Reset metro cache and our webpack enhanced-resolve `unsafeCache`.
+### Reset metro cache and our webpack enhanced-resolve `unsafeCache`.
 
 ```
 rm -rf packages/expo/node_modules/.cache
 ```
 
-Reset watchman file watchers.
+### Reset watchman file watchers.
 
 ```
 watchman watch-del-all
 ```
+
+### `ReferenceError: SHA-1 for file`
+
+```
+cd packages/expo
+pnpm why metro
+
+# Ensure there are NO results
+```
+
+```
+pnpm why @vjpr/metro
+
+# Ensure there are results
+```
+
+### Delete all node_modules
+
+This can fix bad dependency issues and will also solve https://github.com/pnpm/pnpm/issues/3735
+
+```
+npm run delete-node-modules
+pnpm i
+```
+
+### See Github issues
+
+https://github.com/pnpm/pnpm/issues/3731
