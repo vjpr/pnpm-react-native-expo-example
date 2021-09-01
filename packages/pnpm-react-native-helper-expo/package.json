@@ -1,0 +1,12 @@
+{
+  "name": "@live/pnpm-react-native-helper-expo",
+  "version": "0.1.0",
+  "description": "",
+  "dependencies": {
+    "@live/pnpm-react-native-helper": "*",
+    "metro": "^0.59.0",
+    "metro-cache": "^0.59.0",
+    "metro-config": "^0.59.0",
+    "metro-core": "^0.59.0"
+  }
+}

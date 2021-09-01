@@ -2,5 +2,11 @@
   "name": "pnpm-expo-example",
   "version": "0.1.0",
   "dependencies": {
+  },
+  "pnpm": {
+    "overrides": {
+      "jest-haste-map@^24.9.0": "npm:@vjpr/jest-haste-map@24.9.0",
+      "metro@0.59.0": "npm:@vjpr/metro@0.59.0-vjpr.2"
+    }
   }
 }

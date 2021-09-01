@@ -1,1 +1,1 @@
-module.exports = require('@live/pnpm-expo-helper/rn-cli.config.js')
+module.exports = require('@live/pnpm-react-native-helper-expo/rn-cli.config.js')
