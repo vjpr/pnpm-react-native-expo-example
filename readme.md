@@ -6,8 +6,8 @@ How to run Expo and React Native in a pnpm monorepo.
 
 Here are notes of all the difficulties encountered:
 
-Expo v42 - https://github.com/pnpm/pnpm/issues/3731
-React Native v0.65 - https://github.com/pnpm/pnpm/issues/3740
+- Expo v42 - https://github.com/pnpm/pnpm/issues/3731
+- React Native v0.65 - https://github.com/pnpm/pnpm/issues/3740
 
 # Usage
 
