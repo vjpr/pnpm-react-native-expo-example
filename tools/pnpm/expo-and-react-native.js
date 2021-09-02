@@ -12,6 +12,52 @@ module.exports = (pkg, ctx) => {
   // WARNING
 
   //////////////////////////////////////////////////////////////////////////////
+
+  //if (pkg.name === 'react-native') {
+  //  if (pkg.version === '0.63.2') {
+  //    pkg.dependencies = {
+  //      ...pkg.dependencies,
+  //      metro: '^0.59.0',
+  //    }
+  //  }
+  //}
+  //
+  //if (pkg.name === '@react-native-community/cli') {
+  //  if (pkg.version === '0.63.2') {
+  //    pkg.dependencies = {
+  //      ...pkg.dependencies,
+  //      metro: '^0.59.0',
+  //    }
+  //  }
+  //}
+
+  //////////////////////////////////////////////////////////////////////////////
+  // React Native v65
+  //////////////////////////////////////////////////////////////////////////////
+
+  addDepToMany(
+    pkg,
+    [['@react-native-community/cli-platform-ios', '^6.0.0']],
+    [['ora', '^5']],
+  )
+
+  addDepToMany(
+    pkg,
+    [['react-native', '^0.65.0']],
+    [['react-native-codegen', '^0.0.7'], ['mkdirp']],
+  )
+
+  addDepToMany(
+      pkg,
+      [['react-native-codegen', '^0.0.7']], ['invariant', 'glob', 'micromatch', 'mkdirp', 'chalk']
+    )
+
+  addDepToMany(
+      pkg,
+      [['metro-transform-worker', '^0.66.0']], ['metro-minify-uglify']
+    )
+
+  //////////////////////////////////////////////////////////////////////////////
   // Expo v40
   //////////////////////////////////////////////////////////////////////////////
 

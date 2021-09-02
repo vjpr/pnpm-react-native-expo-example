@@ -1,0 +1,13 @@
+{
+  "name": "@live/pnpm-react-native-v65-helper",
+  "version": "0.1.0",
+  "description": "",
+  "dependencies": {
+    "@live/pnpm-react-native-helper": "*",
+    "metro": "^0.66.2",
+    "metro-cache": "^0.66.2",
+    "metro-config": "^0.66.2",
+    "metro-core": "^0.66.2",
+    "metro-transform-worker": "^0.66.2"
+  }
+}
