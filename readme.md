@@ -1,6 +1,13 @@
-# pnpm-expo-example
+# pnpm-react-native-expo-example
 
-See: https://github.com/pnpm/pnpm/issues/3010
+How to run Expo and React Native in a pnpm monorepo.
+
+# Reference
+
+Here are notes of all the difficulties encountered:
+
+Expo v42 - https://github.com/pnpm/pnpm/issues/3731
+React Native v0.65 - https://github.com/pnpm/pnpm/issues/3740
 
 # Usage
 
@@ -8,7 +15,13 @@ Ensure `watchman` is installed.
 
 ```
 pnpm i
-cd packages/expo
+
+cd packages/expo-42
+npm run ios
+
+
+cd packages/react-native-v65
+npm run start
 npm run ios
 ```
 
